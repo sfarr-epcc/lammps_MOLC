@@ -1,0 +1,25 @@
+This package implements the MOLC force field for coarse grained simulations of
+aspherical particles, as described in the paper:
+
+M. Ricci, O. M. Roscioni, L. Querciagrossa, C. Zannoni, MOLC. A
+reversible Coarse Grained approach using anisotropic beads for the
+modelling of organic functional materials, PCCP, 21, 26195 -
+26211(2019) DOI: 10.1039/c9cp04120f (2019)
+
+It allows to perform simulations of collections of Gay-Berne particles linked
+together in coarse-grained molecules by bonds, constraining all relevant degrees
+of freedom, hence ellipsoidal orientations and relative positions, apart from
+distance.
+
+It also provides classes to take into account short and long range electrostatic
+interactions of collections of point charges distributed in the interior of the
+ellipsoidal beads.
+
+It requires packages KPACE, MOLECULE, and ASPHERE to be installed.
+
+
+This package was developed by Matteo Ricci, he can be contacted at the email
+address: matteoeghirotta@gmail.com.
+
+It was updated by Stephen Farr: s.farr at epcc.ed.ac.uk
+
