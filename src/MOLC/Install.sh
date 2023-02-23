@@ -61,3 +61,5 @@ action compute_inter.h
 action compute_inter.cpp
 action compute_inter_molc.h
 action compute_inter_molc.cpp
+action fix_temp_berendsen_asphere.h
+action fix_temp_berendsen_asphere.cpp
