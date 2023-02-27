@@ -245,10 +245,10 @@ void BondEllipsoid::compute(int eflag, int vflag)
     std::vector<BondPotential*> bps = bondPotSet[btype];
 
     if (verbose) {
-      fprintf(hdebug_val, "%lli %i ", update->ntimestep, comm->me);
-      fprintf(hdebug_ene, "%lli %i ", update->ntimestep, comm->me);
-      fprintf(hdebug_gra, "%lli %i ", update->ntimestep, comm->me);
-      fprintf(hdebug_num, "%lli %i ", update->ntimestep, comm->me);
+      fprintf(hdebug_val, "%li %i ", update->ntimestep, comm->me);
+      fprintf(hdebug_ene, "%li %i ", update->ntimestep, comm->me);
+      fprintf(hdebug_gra, "%li %i ", update->ntimestep, comm->me);
+      fprintf(hdebug_num, "%li %i ", update->ntimestep, comm->me);
 
       fprintf(hdebug_val, "%i %i %i ", btype, tag[i1], tag[i2]);
       fprintf(hdebug_ene, "%i %i %i ", btype, tag[i1], tag[i2]);
@@ -313,7 +313,7 @@ void BondEllipsoid::compute(int eflag, int vflag)
         }
       }
 
-      if (isnan(fbond)) {
+      if (std::isnan(fbond)) {
         printf("bond %s has NAN fbond var: %g index %i, bond atoms %i %i "
                "bond type %i\n",
                bp->get_name().c_str(), var[i], i, tag[i1], tag[i2], btype);
@@ -800,7 +800,7 @@ double BondEllipsoid::single(int btype,
     fbond = -p.second;
     fforce += fbond;
 
-    if (isnan(fbond)) {
+    if (std::isnan(fbond)) {
       printf("bond %s has NAN fbond %g %i\n",
              bp->get_name().c_str(), var[i], i);
 
